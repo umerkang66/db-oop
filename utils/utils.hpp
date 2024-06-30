@@ -5,6 +5,8 @@
 
 using namespace std;
 
+bool includes(vector<int> arr, int item);
+
 int str_include_start(string str, string check);
 
 int str_include_end(int starting_index, string str, string check);

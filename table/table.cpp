@@ -22,7 +22,7 @@ void Table::delete_row(string where)
   vector<string> row_vector = split_into_vector(previous_rows, '\n');
 
   int which_column = -1;
-  int which_row = -1;
+  vector<int> which_rows;
 
   vector<string> row_of_columns = split_into_vector(row_vector[1], ',');
   for (int i = 0; i < row_of_columns.size(); i++)
@@ -37,7 +37,7 @@ void Table::delete_row(string where)
   {
     if (split_into_vector(row_vector[i], ',')[which_column] == column_and_value[1])
     {
-      which_row = i;
+      which_rows.push_back(i);
     }
   }
 
@@ -45,7 +45,7 @@ void Table::delete_row(string where)
   vector<string> previous_rows_vector = split_into_vector(previous_rows, '\n');
   for (int i = 0; i < previous_rows_vector.size() - 1; i++)
   {
-    if (i != which_row)
+    if (!includes(which_rows, i))
     {
       new_rows_vector.push_back(previous_rows_vector[i]);
     }

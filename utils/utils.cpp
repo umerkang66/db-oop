@@ -1,5 +1,17 @@
 #include "utils.hpp"
 
+bool includes(vector<int> arr, int item)
+{
+  for (int arr_item : arr)
+  {
+    if (item == arr_item)
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
 int str_include_start(string str, string check)
 {
   // this will return -1, if it doesn't include
