@@ -1,0 +1,2 @@
+sudo apt-get install -y g++-mingw-w64-x86-64
+sudo apt-get remove g++-mingw-w64-x86-64
