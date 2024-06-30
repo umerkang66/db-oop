@@ -264,16 +264,16 @@ bool str_includes(const string &str, const string &substr)
 }
 
 // Function to generate a random ID of given length
-string generateRandomID(int length)
+string generate_random_id(int length)
 {
-  auto generateRandomNumber = [](int min, int max) -> int
+  auto generate_random_number = [](int min, int max) -> int
   {
     return min + (rand() % (max - min + 1));
   };
 
   // Characters to use for generating the random ID
   const string characters = "0123456789ABCDEFabcdef";
-  string randomID;
+  string random_id;
 
   // Seed the random number generator
   srand(time(0));
@@ -281,11 +281,11 @@ string generateRandomID(int length)
   // Generate the random ID
   for (int i = 0; i < length; ++i)
   {
-    int randomIndex = generateRandomNumber(0, characters.size() - 1);
-    randomID += characters[randomIndex];
+    int random_index = generate_random_number(0, characters.size() - 1);
+    random_id += characters[random_index];
   }
 
-  return randomID;
+  return random_id;
 }
 
 void show_as_table(string **matrix, int rows, int cols)

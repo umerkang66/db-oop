@@ -7,7 +7,7 @@ void Table::create_table(string columns)
 
 void Table::add_row(string row)
 {
-  string random_id = generateRandomID(24);
+  string random_id = generate_random_id(24);
   row = random_id + ',' + row;
   string rows = database_ptr->get_table(table_name);
   rows += row;
